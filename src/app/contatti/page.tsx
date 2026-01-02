@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import AnimatedSection from '@/components/AnimatedSection';
+import ContactForm from '@/components/ContactForm';
 
 const contactInfo = [
   {
@@ -83,92 +84,117 @@ export default function ContattiPage() {
           </div>
         </AnimatedSection>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-3 gap-16">
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <AnimatedSection animation="slideLeft">
+              <h2
+                className="text-2xl text-[var(--foreground)] mb-8"
+                style={{ fontFamily: "'Architects Daughter', cursive" }}
+              >
+                Scrivimi
+              </h2>
+              <ContactForm />
+            </AnimatedSection>
+          </div>
+
           {/* Contact Info */}
-          <AnimatedSection animation="slideLeft">
-            <div className="space-y-8">
-              {contactInfo.map((info, index) => (
-                <motion.div
-                  key={info.title}
-                  className="flex gap-4 p-6 bg-[var(--paper)] relative group"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="absolute inset-0 border-2 border-[var(--pencil)] opacity-30 group-hover:opacity-60 transition-opacity"
-                       style={{ transform: 'rotate(-0.5deg)' }} />
+          <div className="lg:col-span-1">
+            <AnimatedSection animation="slideRight" delay={0.2}>
+              <h2
+                className="text-2xl text-[var(--foreground)] mb-8"
+                style={{ fontFamily: "'Architects Daughter', cursive" }}
+              >
+                Informazioni
+              </h2>
 
-                  <div className="text-[var(--pencil)] relative z-10">
-                    {info.icon}
-                  </div>
-
-                  <div className="relative z-10">
-                    <h3
-                      className="text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-1"
-                      style={{ fontFamily: "'Patrick Hand', cursive" }}
-                    >
-                      {info.title}
-                    </h3>
-                    {info.href ? (
-                      <a
-                        href={info.href}
-                        className="text-xl text-[var(--foreground)] hover:text-[var(--pencil)] transition-colors"
-                        style={{ fontFamily: "'Architects Daughter', cursive" }}
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p
-                        className="text-xl text-[var(--foreground)]"
-                        style={{ fontFamily: "'Architects Daughter', cursive" }}
-                      >
-                        {info.value}
-                      </p>
-                    )}
-                    {info.description && (
-                      <p
-                        className="text-base text-[var(--foreground)]/60 mt-1"
+              <div className="space-y-6 mb-10">
+                {contactInfo.map((info, index) => (
+                  <motion.div
+                    key={info.title}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                  >
+                    <div className="text-[var(--pencil)] mt-1">
+                      {info.icon}
+                    </div>
+                    <div>
+                      <h3
+                        className="text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-1"
                         style={{ fontFamily: "'Patrick Hand', cursive" }}
                       >
-                        {info.description}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
+                        {info.title}
+                      </h3>
+                      {info.href ? (
+                        <a
+                          href={info.href}
+                          className="text-lg text-[var(--foreground)] hover:text-[var(--pencil)] transition-colors"
+                          style={{ fontFamily: "'Architects Daughter', cursive" }}
+                        >
+                          {info.value}
+                        </a>
+                      ) : (
+                        <p
+                          className="text-lg text-[var(--foreground)]"
+                          style={{ fontFamily: "'Architects Daughter', cursive" }}
+                        >
+                          {info.value}
+                        </p>
+                      )}
+                      {info.description && (
+                        <p
+                          className="text-sm text-[var(--foreground)]/60"
+                          style={{ fontFamily: "'Patrick Hand', cursive" }}
+                        >
+                          {info.description}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
               {/* Social - Coming Soon */}
               <motion.div
-                className="p-6 bg-[var(--paper)] relative"
+                className="p-4 border-2 border-dashed border-[var(--pencil)] opacity-50"
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                animate={{ opacity: 0.5 }}
+                transition={{ delay: 0.7 }}
               >
-                <div className="absolute inset-0 border-2 border-dashed border-[var(--pencil)] opacity-30"
-                     style={{ transform: 'rotate(0.3deg)' }} />
                 <p
-                  className="text-lg text-[var(--foreground)]/50 italic text-center relative z-10"
+                  className="text-base text-[var(--foreground)] italic text-center"
                   style={{ fontFamily: "'Caveat', cursive" }}
                 >
                   Seguici sui social - Prossimamente
                 </p>
               </motion.div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          </div>
+        </div>
 
-          {/* Map */}
-          <AnimatedSection animation="slideRight" delay={0.2}>
+        {/* Map */}
+        <AnimatedSection animation="fadeUp" delay={0.4}>
+          <div className="mt-20">
+            <h2
+              className="text-2xl text-[var(--foreground)] mb-6"
+              style={{ fontFamily: "'Architects Daughter', cursive" }}
+            >
+              Dove trovarmi
+            </h2>
             <div className="relative">
               <div className="absolute -inset-2 border-2 border-[var(--pencil)] opacity-30"
-                   style={{ transform: 'rotate(0.5deg)' }} />
-              <div className="relative aspect-square lg:aspect-[4/3] overflow-hidden">
+                   style={{ transform: 'rotate(0.3deg)' }} />
+              <div className="relative aspect-[21/9] overflow-hidden">
                 <iframe
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=13.3580%2C38.1140%2C13.3650%2C38.1180&layer=mapnik&marker=38.1157%2C13.3614"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.0!2d13.361!3d38.116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1319ef3d9d0e8b15%3A0x1c0c7f8e3a8b9e0a!2sVia%20Domenico%20Scin%C3%A0%2C%2028%2C%2090139%20Palermo%20PA!5e0!3m2!1sit!2sit!4v1704200000000!5m2!1sit!2sit"
                   width="100%"
                   height="100%"
                   style={{ border: 0, filter: 'grayscale(100%) contrast(1.1)' }}
+                  allowFullScreen
                   loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
                   title="Studio Michelangelo Bartolotta - Palermo"
                 />
               </div>
@@ -176,16 +202,16 @@ export default function ContattiPage() {
                 className="text-center mt-4 text-[var(--foreground)]/60"
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
-                Via Domenico Scinà n. 28, Palermo
+                Via Domenico Scinà n. 28, 90139 Palermo
               </motion.p>
             </div>
-          </AnimatedSection>
-        </div>
+          </div>
+        </AnimatedSection>
 
         {/* CTA */}
-        <AnimatedSection animation="fadeUp" delay={0.4}>
+        <AnimatedSection animation="fadeUp" delay={0.5}>
           <motion.div
-            className="mt-20 text-center py-12 relative"
+            className="mt-16 text-center py-12 relative"
             whileHover={{ rotate: -0.3 }}
           >
             <div className="absolute inset-0 border-t-2 border-b-2 border-[var(--pencil)] opacity-20" />

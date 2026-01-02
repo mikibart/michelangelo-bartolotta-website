@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -15,16 +16,16 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('loading');
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    // Invia email tramite mailto (soluzione semplice senza backend)
+    const mailtoLink = `mailto:michelangelo@atomoprogetti.it?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMessaggio:\n${formData.message}`
+    )}`;
 
-    // In production, you would send the form data to an API
-    console.log('Form submitted:', formData);
+    window.location.href = mailtoLink;
 
     setStatus('success');
     setFormData({ name: '', email: '', subject: '', message: '' });
 
-    // Reset status after 3 seconds
     setTimeout(() => setStatus('idle'), 3000);
   };
 
@@ -35,11 +36,25 @@ export default function ContactForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const inputClass = `w-full px-4 py-3 bg-transparent border-b-2 border-[var(--pencil)]
+    focus:border-[var(--foreground)] focus:outline-none transition-colors
+    text-[var(--foreground)] placeholder:text-[var(--foreground)]/40`;
+
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
+    <motion.form
+      onSubmit={handleSubmit}
+      className="space-y-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+    >
+      <div className="grid md:grid-cols-2 gap-8">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
+          <label
+            htmlFor="name"
+            className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
+            style={{ fontFamily: "'Patrick Hand', cursive" }}
+          >
             Nome *
           </label>
           <input
@@ -49,12 +64,17 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-neutral-300 focus:border-neutral-900 focus:outline-none transition-colors"
+            className={inputClass}
+            style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
             placeholder="Il tuo nome"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
+          <label
+            htmlFor="email"
+            className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
+            style={{ fontFamily: "'Patrick Hand', cursive" }}
+          >
             Email *
           </label>
           <input
@@ -64,14 +84,19 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-3 border border-neutral-300 focus:border-neutral-900 focus:outline-none transition-colors"
+            className={inputClass}
+            style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
             placeholder="La tua email"
           />
         </div>
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-neutral-700 mb-2">
+        <label
+          htmlFor="subject"
+          className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
+          style={{ fontFamily: "'Patrick Hand', cursive" }}
+        >
           Oggetto *
         </label>
         <select
@@ -80,19 +105,24 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full px-4 py-3 border border-neutral-300 focus:border-neutral-900 focus:outline-none transition-colors bg-white"
+          className={`${inputClass} bg-[var(--background)] cursor-pointer`}
+          style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
         >
           <option value="">Seleziona un argomento</option>
-          <option value="pubblicazione">Proposta di pubblicazione</option>
-          <option value="collaborazione">Collaborazione</option>
-          <option value="partnership">Partnership</option>
-          <option value="informazioni">Richiesta informazioni</option>
-          <option value="altro">Altro</option>
+          <option value="Nuovo Progetto">Nuovo Progetto</option>
+          <option value="Consulenza">Consulenza</option>
+          <option value="Ristrutturazione">Ristrutturazione</option>
+          <option value="Informazioni">Richiesta informazioni</option>
+          <option value="Altro">Altro</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
+        <label
+          htmlFor="message"
+          className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
+          style={{ fontFamily: "'Patrick Hand', cursive" }}
+        >
           Messaggio *
         </label>
         <textarea
@@ -102,32 +132,45 @@ export default function ContactForm() {
           onChange={handleChange}
           required
           rows={6}
-          className="w-full px-4 py-3 border border-neutral-300 focus:border-neutral-900 focus:outline-none transition-colors resize-none"
-          placeholder="Il tuo messaggio"
+          className={`${inputClass} resize-none border-2 rounded-none`}
+          style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
+          placeholder="Raccontami il tuo progetto..."
         />
       </div>
 
       <div>
-        <button
+        <motion.button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full md:w-auto px-8 py-3 bg-neutral-900 text-white font-medium hover:bg-neutral-800 transition-colors disabled:bg-neutral-400 disabled:cursor-not-allowed"
+          className="btn-sketch btn-sketch-filled px-10 py-4"
+          whileHover={{ scale: 1.02, rotate: -1 }}
+          whileTap={{ scale: 0.98 }}
         >
           {status === 'loading' ? 'Invio in corso...' : 'Invia messaggio'}
-        </button>
+        </motion.button>
       </div>
 
       {status === 'success' && (
-        <p className="text-green-600 text-sm">
-          Messaggio inviato con successo! Ti risponderemo al più presto.
-        </p>
+        <motion.p
+          className="text-green-600 text-lg"
+          style={{ fontFamily: "'Patrick Hand', cursive" }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          Si aprirà il tuo client email per inviare il messaggio!
+        </motion.p>
       )}
 
       {status === 'error' && (
-        <p className="text-red-600 text-sm">
+        <motion.p
+          className="text-red-600 text-lg"
+          style={{ fontFamily: "'Patrick Hand', cursive" }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
           Si è verificato un errore. Riprova più tardi.
-        </p>
+        </motion.p>
       )}
-    </form>
+    </motion.form>
   );
 }
