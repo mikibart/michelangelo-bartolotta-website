@@ -11,22 +11,37 @@ export default function ContactForm() {
     message: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
+    setErrorMessage('');
 
-    // Invia email tramite mailto (soluzione semplice senza backend)
-    const mailtoLink = `mailto:michelangelo@atomoprogetti.it?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Nome: ${formData.name}\nEmail: ${formData.email}\n\nMessaggio:\n${formData.message}`
-    )}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    window.location.href = mailtoLink;
+      const data = await response.json();
 
-    setStatus('success');
-    setFormData({ name: '', email: '', subject: '', message: '' });
+      if (!response.ok) {
+        throw new Error(data.error || 'Errore durante l\'invio');
+      }
 
-    setTimeout(() => setStatus('idle'), 3000);
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      // Reset status dopo 5 secondi
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Errore sconosciuto');
+    }
   };
 
   const handleChange = (
@@ -64,6 +79,7 @@ export default function ContactForm() {
             value={formData.name}
             onChange={handleChange}
             required
+            disabled={status === 'loading'}
             className={inputClass}
             style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
             placeholder="Il tuo nome"
@@ -84,6 +100,7 @@ export default function ContactForm() {
             value={formData.email}
             onChange={handleChange}
             required
+            disabled={status === 'loading'}
             className={inputClass}
             style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
             placeholder="La tua email"
@@ -105,6 +122,7 @@ export default function ContactForm() {
           value={formData.subject}
           onChange={handleChange}
           required
+          disabled={status === 'loading'}
           className={`${inputClass} bg-[var(--background)] cursor-pointer`}
           style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
         >
@@ -131,6 +149,7 @@ export default function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           required
+          disabled={status === 'loading'}
           rows={6}
           className={`${inputClass} resize-none border-2 rounded-none`}
           style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
@@ -142,34 +161,52 @@ export default function ContactForm() {
         <motion.button
           type="submit"
           disabled={status === 'loading'}
-          className="btn-sketch btn-sketch-filled px-10 py-4"
-          whileHover={{ scale: 1.02, rotate: -1 }}
-          whileTap={{ scale: 0.98 }}
+          className="btn-sketch btn-sketch-filled px-10 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+          whileHover={status !== 'loading' ? { scale: 1.02, rotate: -1 } : {}}
+          whileTap={status !== 'loading' ? { scale: 0.98 } : {}}
         >
-          {status === 'loading' ? 'Invio in corso...' : 'Invia messaggio'}
+          {status === 'loading' ? (
+            <span className="flex items-center gap-2">
+              <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+              </svg>
+              Invio in corso...
+            </span>
+          ) : (
+            'Invia messaggio'
+          )}
         </motion.button>
       </div>
 
       {status === 'success' && (
-        <motion.p
-          className="text-green-600 text-lg"
-          style={{ fontFamily: "'Patrick Hand', cursive" }}
+        <motion.div
+          className="p-4 bg-green-50 border-2 border-green-500"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Si aprirà il tuo client email per inviare il messaggio!
-        </motion.p>
+          <p
+            className="text-green-700 text-lg"
+            style={{ fontFamily: "'Patrick Hand', cursive" }}
+          >
+            Messaggio inviato con successo! Ti risponderò al più presto.
+          </p>
+        </motion.div>
       )}
 
       {status === 'error' && (
-        <motion.p
-          className="text-red-600 text-lg"
-          style={{ fontFamily: "'Patrick Hand', cursive" }}
+        <motion.div
+          className="p-4 bg-red-50 border-2 border-red-500"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Si è verificato un errore. Riprova più tardi.
-        </motion.p>
+          <p
+            className="text-red-700 text-lg"
+            style={{ fontFamily: "'Patrick Hand', cursive" }}
+          >
+            {errorMessage || 'Si è verificato un errore. Riprova più tardi.'}
+          </p>
+        </motion.div>
       )}
     </motion.form>
   );
