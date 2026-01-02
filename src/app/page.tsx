@@ -58,7 +58,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[var(--background)]/85" />
+          <div className="absolute inset-0 bg-[var(--background)]/92" />
 
           {/* Pattern griglia che si anima */}
           <motion.div
@@ -133,8 +133,8 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.5 }}
             >
               <motion.h1
-                className="text-5xl md:text-8xl text-[var(--foreground)] leading-none drop-shadow-sm"
-                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
+                className="text-5xl md:text-8xl text-[var(--foreground)] leading-none"
+                style={{ fontFamily: "var(--font-architects-daughter), cursive", textShadow: "2px 2px 4px rgba(255,255,255,0.8)" }}
               >
                 <motion.span
                   className="block"
@@ -166,8 +166,8 @@ export default function Home() {
 
             {/* Tagline EPICA */}
             <motion.p
-              className="mt-8 text-2xl md:text-4xl text-[var(--foreground)] italic drop-shadow-sm"
-              style={{ fontFamily: "var(--font-caveat), cursive" }}
+              className="mt-8 text-2xl md:text-4xl text-[var(--foreground)] italic"
+              style={{ fontFamily: "var(--font-caveat), cursive", textShadow: "1px 1px 3px rgba(255,255,255,0.8)" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
@@ -177,8 +177,8 @@ export default function Home() {
 
             {/* Sottotitolo */}
             <motion.p
-              className="mt-6 text-xl text-[var(--foreground)]/80 max-w-xl"
-              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
+              className="mt-6 text-xl text-[var(--foreground)] max-w-xl"
+              style={{ fontFamily: "var(--font-patrick-hand), cursive", textShadow: "1px 1px 2px rgba(255,255,255,0.8)" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.2 }}
