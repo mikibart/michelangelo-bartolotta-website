@@ -71,7 +71,7 @@ export default function ChiSonoPage() {
 
           <AnimatedSection animation="slideRight" delay={0.3}>
             <motion.span
-              className="text-sm uppercase tracking-widest text-[var(--muted)]"
+              className="text-sm uppercase tracking-widest text-[var(--foreground)]/60"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
               L{"'"}Architetto
@@ -83,7 +83,7 @@ export default function ChiSonoPage() {
             >
               Michelangelo
               <br />
-              <span className="text-[var(--muted)]">Bartolotta</span>
+              <span className="text-[var(--foreground)]/60">Bartolotta</span>
             </h1>
 
             <motion.div
@@ -102,7 +102,7 @@ export default function ChiSonoPage() {
             </p>
 
             <p
-              className="text-xl text-[var(--muted)] mt-6 leading-relaxed"
+              className="text-xl text-[var(--foreground)]/70 mt-6 leading-relaxed"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
               Architetto per vocazione, visionario per natura. Da oltre 25 anni trasformo
@@ -111,7 +111,7 @@ export default function ChiSonoPage() {
             </p>
 
             <p
-              className="text-xl text-[var(--muted)] mt-4 leading-relaxed"
+              className="text-xl text-[var(--foreground)]/70 mt-4 leading-relaxed"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
               Ogni tratto di matita è un pensiero. Ogni progetto è un dialogo
@@ -213,7 +213,7 @@ export default function ChiSonoPage() {
                       {milestone.year}
                     </span>
                     <p
-                      className="text-lg text-[var(--muted)] mt-1"
+                      className="text-lg text-[var(--foreground)]/70 mt-1"
                       style={{ fontFamily: "'Patrick Hand', cursive" }}
                     >
                       {milestone.event}
@@ -295,7 +295,7 @@ export default function ChiSonoPage() {
             </h2>
 
             <p
-              className="text-xl text-[var(--muted)] mt-4 max-w-xl mx-auto"
+              className="text-xl text-[var(--foreground)]/70 mt-4 max-w-xl mx-auto"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
               Hai un{"'"}idea, un terreno, un sogno? Parliamone davanti a un foglio bianco.

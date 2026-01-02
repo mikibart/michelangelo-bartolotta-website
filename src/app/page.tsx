@@ -58,7 +58,7 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-[var(--background)]/70" />
+          <div className="absolute inset-0 bg-[var(--background)]/85" />
 
           {/* Pattern griglia che si anima */}
           <motion.div
@@ -133,7 +133,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.5 }}
             >
               <motion.h1
-                className="text-5xl md:text-8xl text-[var(--foreground)] leading-none"
+                className="text-5xl md:text-8xl text-[var(--foreground)] leading-none drop-shadow-sm"
                 style={{ fontFamily: "'Architects Daughter', cursive" }}
               >
                 <motion.span
@@ -145,7 +145,7 @@ export default function Home() {
                   Michelangelo
                 </motion.span>
                 <motion.span
-                  className="block text-[var(--muted)]"
+                  className="block text-[var(--foreground)]/70"
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 1 }}
@@ -166,7 +166,7 @@ export default function Home() {
 
             {/* Tagline EPICA */}
             <motion.p
-              className="mt-8 text-2xl md:text-4xl text-[var(--foreground)] italic"
+              className="mt-8 text-2xl md:text-4xl text-[var(--foreground)] italic drop-shadow-sm"
               style={{ fontFamily: "'Caveat', cursive" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ export default function Home() {
 
             {/* Sottotitolo */}
             <motion.p
-              className="mt-6 text-xl text-[var(--muted)] max-w-xl"
+              className="mt-6 text-xl text-[var(--foreground)]/80 max-w-xl"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -254,7 +254,7 @@ export default function Home() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <span className="text-sm text-[var(--muted)]" style={{ fontFamily: "'Patrick Hand', cursive" }}>
+            <span className="text-sm text-[var(--foreground)]/60" style={{ fontFamily: "'Patrick Hand', cursive" }}>
               Scorri
             </span>
             <svg width="24" height="40" viewBox="0 0 24 40" className="text-[var(--pencil)]">
@@ -441,7 +441,7 @@ export default function Home() {
 
             <AnimatedSection animation="slideRight" delay={0.3}>
               <span
-                className="text-sm uppercase tracking-widest text-[var(--muted)]"
+                className="text-sm uppercase tracking-widest text-[var(--foreground)]/60"
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
                 L{"'"}Architetto
@@ -463,7 +463,7 @@ export default function Home() {
               />
 
               <p
-                className="text-xl text-[var(--muted)] mt-8 leading-relaxed"
+                className="text-xl text-[var(--foreground)]/70 mt-8 leading-relaxed"
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
                 Ogni progetto nasce da un dialogo. Con il cliente, con il luogo, con la luce.
@@ -471,7 +471,7 @@ export default function Home() {
               </p>
 
               <p
-                className="text-xl text-[var(--muted)] mt-4 leading-relaxed"
+                className="text-xl text-[var(--foreground)]/70 mt-4 leading-relaxed"
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
                 Da oltre 15 anni trasformo visioni in realta costruite,
