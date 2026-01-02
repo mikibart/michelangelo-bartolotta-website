@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Font hand-drawn per i titoli */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Architects+Daughter&family=Patrick+Hand&display=swap');
-
 :root {
   --foreground: #1a1a1a;
   --background: #faf9f6;
@@ -30,7 +27,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Patrick Hand', 'Caveat', cursive;
+  font-family: var(--font-patrick-hand), var(--font-caveat), cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Texture carta */
@@ -47,7 +44,7 @@ a {
 /* ===== TIPOGRAFIA SKETCH ===== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Architects Daughter', 'Caveat', cursive;
+  font-family: var(--font-architects-daughter), var(--font-caveat), cursive;
   letter-spacing: 0.02em;
 }
 
@@ -65,7 +62,7 @@ h3 {
 }
 
 p, span, li, a {
-  font-family: 'Patrick Hand', cursive;
+  font-family: var(--font-patrick-hand), cursive;
   font-size: 1.125rem;
   letter-spacing: 0.01em;
 }
@@ -151,7 +148,7 @@ p, span, li, a {
   padding: 0.75rem 2rem;
   background: transparent;
   border: none;
-  font-family: 'Architects Daughter', cursive;
+  font-family: var(--font-architects-daughter), cursive;
   font-size: 1.1rem;
   cursor: pointer;
   transition: transform 0.2s;
@@ -286,12 +283,12 @@ p, span, li, a {
 
 .prose h1 {
   @apply text-4xl mb-6 mt-12;
-  font-family: 'Architects Daughter', cursive;
+  font-family: var(--font-architects-daughter), cursive;
 }
 
 .prose h2 {
   @apply text-2xl mb-4 mt-10;
-  font-family: 'Architects Daughter', cursive;
+  font-family: var(--font-architects-daughter), cursive;
   position: relative;
   display: inline-block;
 }
@@ -309,12 +306,12 @@ p, span, li, a {
 
 .prose h3 {
   @apply text-xl mb-3 mt-8;
-  font-family: 'Architects Daughter', cursive;
+  font-family: var(--font-architects-daughter), cursive;
 }
 
 .prose p {
   @apply text-lg leading-relaxed mb-6;
-  font-family: 'Patrick Hand', cursive;
+  font-family: var(--font-patrick-hand), cursive;
   color: var(--foreground);
 }
 
@@ -337,13 +334,13 @@ p, span, li, a {
 
 .prose ol {
   @apply list-decimal list-inside mb-6 space-y-2;
-  font-family: 'Patrick Hand', cursive;
+  font-family: var(--font-patrick-hand), cursive;
 }
 
 .prose blockquote {
   @apply pl-6 italic my-6;
   border-left: 3px solid var(--pencil);
-  font-family: 'Caveat', cursive;
+  font-family: var(--font-caveat), cursive;
   font-size: 1.3rem;
   color: var(--muted);
   transform: rotate(-0.3deg);
@@ -356,7 +353,7 @@ p, span, li, a {
   border: none;
   border-bottom: 2px solid var(--pencil);
   padding: 0.75rem 0;
-  font-family: 'Patrick Hand', cursive;
+  font-family: var(--font-patrick-hand), cursive;
   font-size: 1.1rem;
   outline: none;
   transition: border-color 0.2s;

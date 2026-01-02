@@ -68,7 +68,7 @@ export default function ContactForm() {
           <label
             htmlFor="name"
             className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
-            style={{ fontFamily: "'Patrick Hand', cursive" }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
           >
             Nome *
           </label>
@@ -81,7 +81,7 @@ export default function ContactForm() {
             required
             disabled={status === 'loading'}
             className={inputClass}
-            style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive", fontSize: '1.1rem' }}
             placeholder="Il tuo nome"
           />
         </div>
@@ -89,7 +89,7 @@ export default function ContactForm() {
           <label
             htmlFor="email"
             className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
-            style={{ fontFamily: "'Patrick Hand', cursive" }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
           >
             Email *
           </label>
@@ -102,7 +102,7 @@ export default function ContactForm() {
             required
             disabled={status === 'loading'}
             className={inputClass}
-            style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive", fontSize: '1.1rem' }}
             placeholder="La tua email"
           />
         </div>
@@ -112,7 +112,7 @@ export default function ContactForm() {
         <label
           htmlFor="subject"
           className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
-          style={{ fontFamily: "'Patrick Hand', cursive" }}
+          style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
         >
           Oggetto *
         </label>
@@ -124,7 +124,7 @@ export default function ContactForm() {
           required
           disabled={status === 'loading'}
           className={`${inputClass} bg-[var(--background)] cursor-pointer`}
-          style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
+          style={{ fontFamily: "var(--font-patrick-hand), cursive", fontSize: '1.1rem' }}
         >
           <option value="">Seleziona un argomento</option>
           <option value="Nuovo Progetto">Nuovo Progetto</option>
@@ -139,7 +139,7 @@ export default function ContactForm() {
         <label
           htmlFor="message"
           className="block text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-2"
-          style={{ fontFamily: "'Patrick Hand', cursive" }}
+          style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
         >
           Messaggio *
         </label>
@@ -152,7 +152,7 @@ export default function ContactForm() {
           disabled={status === 'loading'}
           rows={6}
           className={`${inputClass} resize-none border-2 rounded-none`}
-          style={{ fontFamily: "'Patrick Hand', cursive", fontSize: '1.1rem' }}
+          style={{ fontFamily: "var(--font-patrick-hand), cursive", fontSize: '1.1rem' }}
           placeholder="Raccontami il tuo progetto..."
         />
       </div>
@@ -187,7 +187,7 @@ export default function ContactForm() {
         >
           <p
             className="text-green-700 text-lg"
-            style={{ fontFamily: "'Patrick Hand', cursive" }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
           >
             Messaggio inviato con successo! Ti risponderò al più presto.
           </p>
@@ -202,7 +202,7 @@ export default function ContactForm() {
         >
           <p
             className="text-red-700 text-lg"
-            style={{ fontFamily: "'Patrick Hand', cursive" }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
           >
             {errorMessage || 'Si è verificato un errore. Riprova più tardi.'}
           </p>

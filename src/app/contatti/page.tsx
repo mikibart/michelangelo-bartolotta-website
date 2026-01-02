@@ -57,13 +57,13 @@ export default function ContattiPage() {
           <div className="max-w-2xl mb-16">
             <motion.span
               className="text-sm uppercase tracking-widest text-[var(--foreground)]/60"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Parliamone
             </motion.span>
             <h1
               className="text-4xl md:text-5xl text-[var(--foreground)] mt-2"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Contatti
             </h1>
@@ -76,7 +76,7 @@ export default function ContattiPage() {
             />
             <p
               className="text-xl text-[var(--foreground)]/70 mt-6 leading-relaxed"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Hai un progetto in mente? Un terreno da trasformare? O semplicemente
               vuoi scambiare due parole sull{"'"}architettura? Sono qui.
@@ -90,7 +90,7 @@ export default function ContattiPage() {
             <AnimatedSection animation="slideLeft">
               <h2
                 className="text-2xl text-[var(--foreground)] mb-8"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
               >
                 Scrivimi
               </h2>
@@ -103,7 +103,7 @@ export default function ContattiPage() {
             <AnimatedSection animation="slideRight" delay={0.2}>
               <h2
                 className="text-2xl text-[var(--foreground)] mb-8"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
               >
                 Informazioni
               </h2>
@@ -123,7 +123,7 @@ export default function ContattiPage() {
                     <div>
                       <h3
                         className="text-sm uppercase tracking-wider text-[var(--foreground)]/60 mb-1"
-                        style={{ fontFamily: "'Patrick Hand', cursive" }}
+                        style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                       >
                         {info.title}
                       </h3>
@@ -131,14 +131,14 @@ export default function ContattiPage() {
                         <a
                           href={info.href}
                           className="text-lg text-[var(--foreground)] hover:text-[var(--pencil)] transition-colors"
-                          style={{ fontFamily: "'Architects Daughter', cursive" }}
+                          style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                         >
                           {info.value}
                         </a>
                       ) : (
                         <p
                           className="text-lg text-[var(--foreground)]"
-                          style={{ fontFamily: "'Architects Daughter', cursive" }}
+                          style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                         >
                           {info.value}
                         </p>
@@ -146,7 +146,7 @@ export default function ContattiPage() {
                       {info.description && (
                         <p
                           className="text-sm text-[var(--foreground)]/60"
-                          style={{ fontFamily: "'Patrick Hand', cursive" }}
+                          style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                         >
                           {info.description}
                         </p>
@@ -165,7 +165,7 @@ export default function ContattiPage() {
               >
                 <p
                   className="text-base text-[var(--foreground)] italic text-center"
-                  style={{ fontFamily: "'Caveat', cursive" }}
+                  style={{ fontFamily: "var(--font-caveat), cursive" }}
                 >
                   Seguici sui social - Prossimamente
                 </p>
@@ -179,7 +179,7 @@ export default function ContattiPage() {
           <div className="mt-20">
             <h2
               className="text-2xl text-[var(--foreground)] mb-6"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Dove trovarmi
             </h2>
@@ -200,7 +200,7 @@ export default function ContattiPage() {
               </div>
               <motion.p
                 className="text-center mt-4 text-[var(--foreground)]/60"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 Via Domenico Scinà n. 28, 90139 Palermo
               </motion.p>
@@ -217,7 +217,7 @@ export default function ContattiPage() {
             <div className="absolute inset-0 border-t-2 border-b-2 border-[var(--pencil)] opacity-20" />
             <p
               className="text-2xl text-[var(--foreground)] italic"
-              style={{ fontFamily: "'Caveat', cursive" }}
+              style={{ fontFamily: "var(--font-caveat), cursive" }}
             >
               {'"'}Ogni grande progetto inizia con una conversazione{'"'}
             </p>

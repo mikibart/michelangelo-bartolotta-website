@@ -43,7 +43,7 @@ export default function Footer() {
             <Link href="/" className="inline-block">
               <motion.span
                 className="text-3xl font-bold tracking-tight"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                 whileHover={{ scale: 1.05 }}
               >
                 MB
@@ -52,7 +52,7 @@ export default function Footer() {
 
             <p
               className="mt-4 text-base opacity-70 leading-relaxed"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Michelangelo Bartolotta
               <br />
@@ -61,7 +61,7 @@ export default function Footer() {
 
             <p
               className="mt-4 text-lg italic opacity-50"
-              style={{ fontFamily: "'Caveat', cursive" }}
+              style={{ fontFamily: "var(--font-caveat), cursive" }}
             >
               {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
             </p>
@@ -92,7 +92,7 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm uppercase tracking-widest opacity-50 mb-6"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Navigazione
             </h3>
@@ -108,7 +108,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-base opacity-70 hover:opacity-100 transition-opacity"
-                    style={{ fontFamily: "'Patrick Hand', cursive" }}
+                    style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                   >
                     {link.name}
                   </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm uppercase tracking-widest opacity-50 mb-6"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Info
             </h3>
@@ -137,7 +137,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-base opacity-70 hover:opacity-100 transition-opacity"
-                    style={{ fontFamily: "'Patrick Hand', cursive" }}
+                    style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                   >
                     {link.name}
                   </Link>
@@ -150,7 +150,7 @@ export default function Footer() {
           <div>
             <h3
               className="text-sm uppercase tracking-widest opacity-50 mb-6"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Social
             </h3>
@@ -166,7 +166,7 @@ export default function Footer() {
                   <Link
                     href={link.href}
                     className="text-base opacity-70 hover:opacity-100 transition-opacity"
-                    style={{ fontFamily: "'Patrick Hand', cursive" }}
+                    style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                   >
                     {link.name}
                   </Link>
@@ -186,13 +186,13 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p
               className="text-sm opacity-50"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               &copy; {new Date().getFullYear()} Michelangelo Bartolotta. Tutti i diritti riservati.
             </p>
             <p
               className="text-sm opacity-50"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               michelangelo-bartolotta.com
             </p>

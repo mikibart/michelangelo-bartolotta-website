@@ -72,14 +72,14 @@ export default function ChiSonoPage() {
           <AnimatedSection animation="slideRight" delay={0.3}>
             <motion.span
               className="text-sm uppercase tracking-widest text-[var(--foreground)]/60"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               L{"'"}Architetto
             </motion.span>
 
             <h1
               className="text-5xl md:text-6xl text-[var(--foreground)] mt-4"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Michelangelo
               <br />
@@ -96,14 +96,14 @@ export default function ChiSonoPage() {
 
             <p
               className="text-2xl text-[var(--foreground)] mt-8 italic"
-              style={{ fontFamily: "'Caveat', cursive" }}
+              style={{ fontFamily: "var(--font-caveat), cursive" }}
             >
               {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
             </p>
 
             <p
               className="text-xl text-[var(--foreground)]/70 mt-6 leading-relaxed"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Architetto per vocazione, visionario per natura. Da oltre 25 anni trasformo
               idee in spazi che respirano, edifici che raccontano storie, luoghi che
@@ -112,7 +112,7 @@ export default function ChiSonoPage() {
 
             <p
               className="text-xl text-[var(--foreground)]/70 mt-4 leading-relaxed"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Ogni tratto di matita è un pensiero. Ogni progetto è un dialogo
               tra la mia visione e le esigenze di chi lo abiterà.
@@ -139,14 +139,14 @@ export default function ChiSonoPage() {
             <div className="max-w-3xl mx-auto text-center">
               <h2
                 className="text-4xl md:text-5xl mb-8"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
               >
                 La Mia Filosofia
               </h2>
 
               <p
                 className="text-xl md:text-2xl leading-relaxed opacity-90"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 Non costruisco edifici. Creo esperienze. Ogni spazio che progetto
                 nasce dall{"'"}ascolto: del cliente, del luogo, della luce.
@@ -180,7 +180,7 @@ export default function ChiSonoPage() {
         <AnimatedSection animation="fadeUp">
           <h2
             className="text-4xl text-[var(--foreground)] text-center mb-16"
-            style={{ fontFamily: "'Architects Daughter', cursive" }}
+            style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
           >
             Il Percorso
           </h2>
@@ -208,13 +208,13 @@ export default function ChiSonoPage() {
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <span
                       className="text-3xl text-[var(--pencil)]"
-                      style={{ fontFamily: "'Architects Daughter', cursive" }}
+                      style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                     >
                       {milestone.year}
                     </span>
                     <p
                       className="text-lg text-[var(--foreground)]/70 mt-1"
-                      style={{ fontFamily: "'Patrick Hand', cursive" }}
+                      style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                     >
                       {milestone.event}
                     </p>
@@ -253,7 +253,7 @@ export default function ChiSonoPage() {
           <AnimatedSection animation="fadeUp">
             <h2
               className="text-4xl text-[var(--foreground)] text-center mb-16"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Competenze
             </h2>
@@ -269,7 +269,7 @@ export default function ChiSonoPage() {
                   <div className="absolute inset-0 border-2 border-[var(--pencil)] opacity-50 group-hover:opacity-100 transition-opacity" />
                   <p
                     className="text-xl text-[var(--foreground)] relative z-10"
-                    style={{ fontFamily: "'Architects Daughter', cursive" }}
+                    style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                   >
                     {skill}
                   </p>
@@ -289,14 +289,14 @@ export default function ChiSonoPage() {
           >
             <h2
               className="text-4xl md:text-5xl text-[var(--foreground)]"
-              style={{ fontFamily: "'Architects Daughter', cursive" }}
+              style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
             >
               Costruiamo insieme
             </h2>
 
             <p
               className="text-xl text-[var(--foreground)]/70 mt-4 max-w-xl mx-auto"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             >
               Hai un{"'"}idea, un terreno, un sogno? Parliamone davanti a un foglio bianco.
             </p>

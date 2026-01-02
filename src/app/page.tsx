@@ -134,7 +134,7 @@ export default function Home() {
             >
               <motion.h1
                 className="text-5xl md:text-8xl text-[var(--foreground)] leading-none drop-shadow-sm"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
               >
                 <motion.span
                   className="block"
@@ -167,7 +167,7 @@ export default function Home() {
             {/* Tagline EPICA */}
             <motion.p
               className="mt-8 text-2xl md:text-4xl text-[var(--foreground)] italic drop-shadow-sm"
-              style={{ fontFamily: "'Caveat', cursive" }}
+              style={{ fontFamily: "var(--font-caveat), cursive" }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
@@ -178,7 +178,7 @@ export default function Home() {
             {/* Sottotitolo */}
             <motion.p
               className="mt-6 text-xl text-[var(--foreground)]/80 max-w-xl"
-              style={{ fontFamily: "'Patrick Hand', cursive" }}
+              style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.2 }}
@@ -254,7 +254,7 @@ export default function Home() {
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            <span className="text-sm text-[var(--foreground)]/60" style={{ fontFamily: "'Patrick Hand', cursive" }}>
+            <span className="text-sm text-[var(--foreground)]/60" style={{ fontFamily: "var(--font-patrick-hand), cursive" }}>
               Scorri
             </span>
             <svg width="24" height="40" viewBox="0 0 24 40" className="text-[var(--pencil)]">
@@ -290,13 +290,13 @@ export default function Home() {
               <div>
                 <motion.span
                   className="text-sm uppercase tracking-widest text-[var(--muted)]"
-                  style={{ fontFamily: "'Patrick Hand', cursive" }}
+                  style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                 >
                   Portfolio
                 </motion.span>
                 <h2
                   className="text-5xl md:text-6xl text-[var(--foreground)] mt-2"
-                  style={{ fontFamily: "'Architects Daughter', cursive" }}
+                  style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                 >
                   Progetti Selezionati
                 </h2>
@@ -312,7 +312,7 @@ export default function Home() {
               <Link
                 href="/progetti"
                 className="hidden md:block text-lg text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 <motion.span whileHover={{ x: 10 }} className="inline-block">
                   Vedi tutti →
@@ -346,7 +346,7 @@ export default function Home() {
                       >
                         <span
                           className="text-2xl text-[var(--foreground)]"
-                          style={{ fontFamily: "'Architects Daughter', cursive" }}
+                          style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                         >
                           Scopri →
                         </span>
@@ -363,19 +363,19 @@ export default function Home() {
                   >
                     <p
                       className="text-sm text-[var(--muted)] uppercase tracking-wider"
-                      style={{ fontFamily: "'Patrick Hand', cursive" }}
+                      style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                     >
                       {project.category} · {project.year}
                     </p>
                     <h3
                       className="text-2xl text-[var(--foreground)] mt-2 group-hover:text-[var(--pencil)] transition-colors"
-                      style={{ fontFamily: "'Architects Daughter', cursive" }}
+                      style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                     >
                       {project.title}
                     </h3>
                     <p
                       className="text-lg text-[var(--muted)] mt-2"
-                      style={{ fontFamily: "'Patrick Hand', cursive" }}
+                      style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                     >
                       {project.excerpt}
                     </p>
@@ -442,13 +442,13 @@ export default function Home() {
             <AnimatedSection animation="slideRight" delay={0.3}>
               <span
                 className="text-sm uppercase tracking-widest text-[var(--foreground)]/60"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 L{"'"}Architetto
               </span>
               <h2
                 className="text-4xl md:text-5xl text-[var(--foreground)] mt-2"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
               >
                 La mia visione
               </h2>
@@ -464,7 +464,7 @@ export default function Home() {
 
               <p
                 className="text-xl text-[var(--foreground)]/70 mt-8 leading-relaxed"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 Ogni progetto nasce da un dialogo. Con il cliente, con il luogo, con la luce.
                 Non disegno edifici, racconto storie attraverso gli spazi.
@@ -472,7 +472,7 @@ export default function Home() {
 
               <p
                 className="text-xl text-[var(--foreground)]/70 mt-4 leading-relaxed"
-                style={{ fontFamily: "'Patrick Hand', cursive" }}
+                style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
               >
                 Da oltre 15 anni trasformo visioni in realta costruite,
                 unendo tradizione e innovazione in ogni tratto di matita.
@@ -525,7 +525,7 @@ export default function Home() {
 
               <motion.h2
                 className="text-4xl md:text-6xl"
-                style={{ fontFamily: "'Architects Daughter', cursive" }}
+                style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -535,7 +535,7 @@ export default function Home() {
 
               <motion.p
                 className="text-xl md:text-2xl mt-4 opacity-80"
-                style={{ fontFamily: "'Caveat', cursive" }}
+                style={{ fontFamily: "var(--font-caveat), cursive" }}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 0.8 }}
                 transition={{ delay: 0.3 }}
@@ -553,7 +553,7 @@ export default function Home() {
                 <Link href="/contatti">
                   <motion.span
                     className="inline-block mt-10 px-10 py-4 bg-[var(--background)] text-[var(--pencil)] text-xl"
-                    style={{ fontFamily: "'Architects Daughter', cursive" }}
+                    style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                     whileHover={{ scale: 1.05, rotate: 1 }}
                     whileTap={{ scale: 0.95 }}
                   >

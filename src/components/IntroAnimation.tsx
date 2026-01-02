@@ -178,7 +178,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
               >
                 <h1
                   className="text-4xl md:text-6xl text-[var(--foreground)]"
-                  style={{ fontFamily: "'Architects Daughter', cursive" }}
+                  style={{ fontFamily: "var(--font-architects-daughter), cursive" }}
                 >
                   Michelangelo Bartolotta
                 </h1>
@@ -196,7 +196,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
               >
                 <p
                   className="text-xl md:text-2xl text-[var(--muted)] italic"
-                  style={{ fontFamily: "'Caveat', cursive" }}
+                  style={{ fontFamily: "var(--font-caveat), cursive" }}
                 >
                   {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
                 </p>
@@ -207,7 +207,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
           {/* Skip button */}
           <motion.button
             className="absolute bottom-8 right-8 text-sm text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
-            style={{ fontFamily: "'Patrick Hand', cursive" }}
+            style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
             onClick={onComplete}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

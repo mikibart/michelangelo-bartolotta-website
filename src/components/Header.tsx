@@ -40,7 +40,7 @@ export default function Header() {
               whileHover={{ scale: 1.05, rotate: -2 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <span className="text-2xl md:text-3xl font-bold tracking-tight" style={{ fontFamily: "'Architects Daughter', cursive" }}>
+              <span className="text-2xl md:text-3xl font-bold tracking-tight" style={{ fontFamily: "var(--font-architects-daughter), cursive" }}>
                 <span className="relative">
                   MB
                   <motion.svg
@@ -64,7 +64,7 @@ export default function Header() {
                   </motion.svg>
                 </span>
               </span>
-              <span className="hidden md:inline ml-3 text-sm text-[var(--muted)]" style={{ fontFamily: "'Patrick Hand', cursive" }}>
+              <span className="hidden md:inline ml-3 text-sm text-[var(--muted)]" style={{ fontFamily: "var(--font-patrick-hand), cursive" }}>
                 Architetto
               </span>
             </motion.div>
@@ -82,7 +82,7 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className="link-sketch text-lg text-[var(--foreground)] hover:text-[var(--pencil)] transition-colors relative group"
-                  style={{ fontFamily: "'Patrick Hand', cursive" }}
+                  style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                 >
                   {item.name}
                   <motion.span
@@ -152,7 +152,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className="text-xl text-[var(--foreground)] hover:text-[var(--pencil)] py-2 block"
-                      style={{ fontFamily: "'Patrick Hand', cursive" }}
+                      style={{ fontFamily: "var(--font-patrick-hand), cursive" }}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       — {item.name}
