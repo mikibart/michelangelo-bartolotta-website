@@ -6,6 +6,7 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 export default function PencilCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
@@ -19,6 +20,11 @@ export default function PencilCursor() {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
       setIsVisible(true);
+
+      // Check if hovering over clickable element
+      const target = e.target as HTMLElement;
+      const isClickable = target.closest('a, button, [role="button"], input, textarea, select, [onclick]');
+      setIsHovering(!!isClickable);
     };
 
     const handleMouseDown = () => setIsDrawing(true);
@@ -41,6 +47,11 @@ export default function PencilCursor() {
     };
   }, [cursorX, cursorY]);
 
+  // Colori matita
+  const pencilBody = isHovering ? '#4ade80' : '#f4d03f'; // Verde quando su link
+  const pencilStripe = isHovering ? '#22c55e' : '#e74c3c';
+  const pencilMetal = isHovering ? '#86efac' : '#c0c0c0';
+
   return (
     <>
       {/* Cursore matita */}
@@ -53,33 +64,50 @@ export default function PencilCursor() {
         }}
       >
         <motion.svg
-          width="48"
-          height="48"
-          viewBox="0 0 48 48"
-          style={{ transform: 'translate(-2px, -46px)' }}
+          width="60"
+          height="60"
+          viewBox="0 0 60 60"
+          style={{ transform: 'translate(-5px, -55px)' }}
           animate={{
-            rotate: isDrawing ? [0, -3, 3, -3, 0] : 0,
-            scale: isDrawing ? 1.05 : 1,
+            rotate: isDrawing ? [45, 42, 48, 42, 45] : 45,
+            scale: isDrawing ? 1.1 : isHovering ? 1.15 : 1,
           }}
           transition={{
             rotate: { duration: 0.2, repeat: isDrawing ? Infinity : 0 },
             scale: { duration: 0.15 },
           }}
         >
-          {/* Matita - punta in basso allineata al cursore */}
-          <g transform="translate(24, 24)">
+          {/* Matita ruotata 45° - punta in basso a destra */}
+          <g transform="translate(5, 55)">
             {/* Corpo matita */}
-            <rect x="-3" y="-40" width="6" height="28" fill="#f4d03f" stroke="#2a2a2a" strokeWidth="1" />
-            {/* Striscia rossa */}
-            <rect x="-3" y="-40" width="6" height="4" fill="#e74c3c" />
+            <motion.rect
+              x="-3" y="-48" width="6" height="32"
+              fill={pencilBody}
+              stroke="#2a2a2a"
+              strokeWidth="1"
+              animate={{ fill: pencilBody }}
+              transition={{ duration: 0.2 }}
+            />
+            {/* Striscia colorata */}
+            <motion.rect
+              x="-3" y="-48" width="6" height="5"
+              fill={pencilStripe}
+              animate={{ fill: pencilStripe }}
+              transition={{ duration: 0.2 }}
+            />
             {/* Punta legno */}
-            <polygon points="-3,-12 3,-12 0,0" fill="#f5d6ba" stroke="#2a2a2a" strokeWidth="1" />
+            <polygon points="-3,-16 3,-16 0,0" fill="#f5d6ba" stroke="#2a2a2a" strokeWidth="1" />
             {/* Mina (punta) - questo è il punto di click */}
-            <polygon points="-1,-4 1,-4 0,0" fill="#2a2a2a" />
+            <polygon points="-1,-5 1,-5 0,0" fill="#2a2a2a" />
             {/* Gomma */}
-            <rect x="-3" y="-44" width="6" height="4" fill="#ffb6c1" rx="1" />
+            <rect x="-3" y="-53" width="6" height="5" fill="#ffb6c1" rx="1" />
             {/* Fascetta metallica */}
-            <rect x="-4" y="-40" width="8" height="2" fill="#c0c0c0" />
+            <motion.rect
+              x="-4" y="-48" width="8" height="3"
+              fill={pencilMetal}
+              animate={{ fill: pencilMetal }}
+              transition={{ duration: 0.2 }}
+            />
           </g>
         </motion.svg>
 
