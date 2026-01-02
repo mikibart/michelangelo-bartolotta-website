@@ -198,7 +198,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
                   className="text-xl md:text-2xl text-[var(--muted)] italic"
                   style={{ fontFamily: "'Caveat', cursive" }}
                 >
-                  "Dopo Dio c'è l'architetto"
+                  {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
                 </p>
               </motion.div>
             )}

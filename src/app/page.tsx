@@ -172,7 +172,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
             >
-              "Dopo Dio c'è l'architetto"
+              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
             </motion.p>
 
             {/* Sottotitolo */}
@@ -183,7 +183,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.2 }}
             >
-              Creo spazi che raccontano storie. Ogni linea è un pensiero, ogni progetto è un'emozione.
+              Creo spazi che raccontano storie. Ogni linea è un pensiero, ogni progetto è un{"'"}emozione.
             </motion.p>
 
             {/* CTA */}
@@ -444,7 +444,7 @@ export default function Home() {
                 className="text-sm uppercase tracking-widest text-[var(--muted)]"
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
-                L'Architetto
+                L{"'"}Architetto
               </span>
               <h2
                 className="text-4xl md:text-5xl text-[var(--foreground)] mt-2"
@@ -530,7 +530,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Hai un'idea?
+                Hai un{"'"}idea?
               </motion.h2>
 
               <motion.p

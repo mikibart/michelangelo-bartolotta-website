@@ -74,7 +74,7 @@ export default function ChiSonoPage() {
               className="text-sm uppercase tracking-widest text-[var(--muted)]"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
-              L'Architetto
+              L{"'"}Architetto
             </motion.span>
 
             <h1
@@ -98,7 +98,7 @@ export default function ChiSonoPage() {
               className="text-2xl text-[var(--foreground)] mt-8 italic"
               style={{ fontFamily: "'Caveat', cursive" }}
             >
-              "Dopo Dio c'è l'architetto"
+              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
             </p>
 
             <p
@@ -149,8 +149,8 @@ export default function ChiSonoPage() {
                 style={{ fontFamily: "'Patrick Hand', cursive" }}
               >
                 Non costruisco edifici. Creo esperienze. Ogni spazio che progetto
-                nasce dall'ascolto: del cliente, del luogo, della luce.
-                L'architettura per me è poesia costruita, è dare forma ai sogni
+                nasce dall{"'"}ascolto: del cliente, del luogo, della luce.
+                L{"'"}architettura per me è poesia costruita, è dare forma ai sogni
                 rispettando la terra che li accoglie.
               </p>
 
@@ -298,7 +298,7 @@ export default function ChiSonoPage() {
               className="text-xl text-[var(--muted)] mt-4 max-w-xl mx-auto"
               style={{ fontFamily: "'Patrick Hand', cursive" }}
             >
-              Hai un'idea, un terreno, un sogno? Parliamone davanti a un foglio bianco.
+              Hai un{"'"}idea, un terreno, un sogno? Parliamone davanti a un foglio bianco.
             </p>
 
             <Link href="/contatti">

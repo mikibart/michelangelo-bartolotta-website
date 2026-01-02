@@ -63,7 +63,7 @@ export default function Footer() {
               className="mt-4 text-lg italic opacity-50"
               style={{ fontFamily: "'Caveat', cursive" }}
             >
-              "Dopo Dio c'è l'architetto"
+              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
             </p>
 
             {/* Firma animata */}
