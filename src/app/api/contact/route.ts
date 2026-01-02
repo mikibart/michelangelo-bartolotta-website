@@ -1,8 +1,7 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const { name, email, subject, message } = await request.json();
 
@@ -14,10 +13,21 @@ export async function POST(request: Request) {
       );
     }
 
+    // Configura trasporto SMTP Hostinger
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.hostinger.com',
+      port: 465,
+      secure: true, // SSL
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
     // Invia email
-    const { data, error } = await resend.emails.send({
-      from: 'Sito Web <onboarding@resend.dev>',
-      to: ['michelangelo@atomoprogetti.it'],
+    await transporter.sendMail({
+      from: `"Sito Web" <${process.env.SMTP_USER}>`,
+      to: 'michelangelo@atomoprogetti.it',
       replyTo: email,
       subject: `[Sito Web] ${subject}`,
       html: `
@@ -44,22 +54,14 @@ export async function POST(request: Request) {
       `,
     });
 
-    if (error) {
-      console.error('Resend error:', error);
-      return NextResponse.json(
-        { error: 'Errore durante l\'invio dell\'email' },
-        { status: 500 }
-      );
-    }
-
     return NextResponse.json(
       { success: true, message: 'Email inviata con successo!' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Server error:', error);
+    console.error('SMTP error:', error);
     return NextResponse.json(
-      { error: 'Errore del server' },
+      { error: 'Errore durante l\'invio dell\'email' },
       { status: 500 }
     );
   }
