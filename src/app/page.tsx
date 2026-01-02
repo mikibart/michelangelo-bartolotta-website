@@ -78,7 +78,7 @@ export default function Home() {
 
         {/* Contenuto Hero */}
         <motion.div
-          className="relative z-10 max-w-7xl px-8 lg:pl-48 lg:pr-8 pt-32 pb-20"
+          className="relative z-10 mx-auto max-w-7xl px-8 lg:px-16 pt-32 pb-20"
           style={{ opacity: heroOpacity, scale: heroScale }}
         >
           <div className="max-w-2xl">
