@@ -53,44 +53,44 @@ export default function PencilCursor() {
         }}
       >
         <motion.svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          className="transform -translate-x-1 -translate-y-10"
+          width="48"
+          height="48"
+          viewBox="0 0 48 48"
+          style={{ transform: 'translate(-2px, -46px)' }}
           animate={{
-            rotate: isDrawing ? [0, -5, 5, -5, 0] : 0,
-            scale: isDrawing ? 1.1 : 1,
+            rotate: isDrawing ? [0, -3, 3, -3, 0] : 0,
+            scale: isDrawing ? 1.05 : 1,
           }}
           transition={{
-            rotate: { duration: 0.3, repeat: isDrawing ? Infinity : 0 },
-            scale: { duration: 0.2 },
+            rotate: { duration: 0.2, repeat: isDrawing ? Infinity : 0 },
+            scale: { duration: 0.15 },
           }}
         >
-          {/* Matita */}
-          <g transform="rotate(45, 20, 20)">
+          {/* Matita - punta in basso allineata al cursore */}
+          <g transform="translate(24, 24)">
             {/* Corpo matita */}
-            <rect x="17" y="5" width="6" height="25" fill="#f4d03f" stroke="#2a2a2a" strokeWidth="1" />
-            {/* Striscia */}
-            <rect x="17" y="5" width="6" height="4" fill="#e74c3c" />
-            {/* Punta */}
-            <polygon points="17,30 23,30 20,38" fill="#f5d6ba" stroke="#2a2a2a" strokeWidth="1" />
-            {/* Mina */}
-            <polygon points="19,34 21,34 20,38" fill="#2a2a2a" />
+            <rect x="-3" y="-40" width="6" height="28" fill="#f4d03f" stroke="#2a2a2a" strokeWidth="1" />
+            {/* Striscia rossa */}
+            <rect x="-3" y="-40" width="6" height="4" fill="#e74c3c" />
+            {/* Punta legno */}
+            <polygon points="-3,-12 3,-12 0,0" fill="#f5d6ba" stroke="#2a2a2a" strokeWidth="1" />
+            {/* Mina (punta) - questo è il punto di click */}
+            <polygon points="-1,-4 1,-4 0,0" fill="#2a2a2a" />
             {/* Gomma */}
-            <rect x="17" y="2" width="6" height="3" fill="#ffb6c1" rx="1" />
-            {/* Fascetta */}
-            <rect x="16" y="5" width="8" height="2" fill="#c0c0c0" />
+            <rect x="-3" y="-44" width="6" height="4" fill="#ffb6c1" rx="1" />
+            {/* Fascetta metallica */}
+            <rect x="-4" y="-40" width="8" height="2" fill="#c0c0c0" />
           </g>
         </motion.svg>
 
-        {/* Scia di disegno */}
+        {/* Scia di disegno - sulla punta */}
         {isDrawing && (
           <motion.div
             className="absolute w-1 h-1 bg-[var(--pencil)] rounded-full"
-            style={{ left: '20px', top: '38px' }}
+            style={{ left: '-1px', top: '-1px' }}
             initial={{ scale: 0 }}
-            animate={{ scale: [0, 1, 0] }}
-            transition={{ duration: 0.3, repeat: Infinity }}
+            animate={{ scale: [0, 1.5, 0] }}
+            transition={{ duration: 0.2, repeat: Infinity }}
           />
         )}
       </motion.div>
