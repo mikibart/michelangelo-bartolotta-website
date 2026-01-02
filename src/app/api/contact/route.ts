@@ -16,12 +16,15 @@ export async function POST(request: Request) {
     // Configura trasporto SMTP Hostinger
     const transporter = nodemailer.createTransport({
       host: 'smtp.hostinger.com',
-      port: 465,
-      secure: true, // SSL
+      port: 587,
+      secure: false, // TLS
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      tls: {
+        rejectUnauthorized: false
+      }
     });
 
     // Invia email
@@ -59,9 +62,10 @@ export async function POST(request: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('SMTP error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    console.error('SMTP error:', errorMessage, error);
     return NextResponse.json(
-      { error: 'Errore durante l\'invio dell\'email' },
+      { error: `Errore SMTP: ${errorMessage}` },
       { status: 500 }
     );
   }
