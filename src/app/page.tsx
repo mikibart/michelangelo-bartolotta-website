@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <>
       {/* HERO SECTION - EPICA */}
-      <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex items-start overflow-hidden">
         {/* Background parallax */}
         <motion.div className="absolute inset-0 z-0" style={{ y: heroY }}>
           <Image
@@ -78,10 +78,10 @@ export default function Home() {
 
         {/* Contenuto Hero */}
         <motion.div
-          className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-20"
+          className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-20"
           style={{ opacity: heroOpacity, scale: heroScale }}
         >
-          <div className="max-w-4xl">
+          <div className="max-w-2xl">
             {/* Icona architetto animata */}
             <motion.svg
               className="w-24 h-24 mb-8"
