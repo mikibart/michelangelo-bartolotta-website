@@ -172,7 +172,7 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.8 }}
             >
-              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
+              C{"'"}è chi abita il mondo. E chi lo disegna.
             </motion.p>
 
             {/* Sottotitolo */}

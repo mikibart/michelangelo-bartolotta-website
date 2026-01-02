@@ -29,7 +29,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: 'Michelangelo Bartolotta | Architetto',
-  description: 'Dopo Dio c\'è l\'architetto. Portfolio di architettura contemporanea di Michelangelo Bartolotta.',
+  description: 'C\'è chi abita il mondo. E chi lo disegna. Portfolio di architettura contemporanea di Michelangelo Bartolotta.',
 };
 
 export default function RootLayout({

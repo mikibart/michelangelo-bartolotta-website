@@ -198,7 +198,7 @@ export default function IntroAnimation({ onComplete }: IntroAnimationProps) {
                   className="text-xl md:text-2xl text-[var(--muted)] italic"
                   style={{ fontFamily: "var(--font-caveat), cursive" }}
                 >
-                  {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
+                  C{"'"}è chi abita il mondo. E chi lo disegna.
                 </p>
               </motion.div>
             )}

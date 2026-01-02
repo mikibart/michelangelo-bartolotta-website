@@ -63,7 +63,7 @@ export default function Footer() {
               className="mt-4 text-lg italic opacity-50"
               style={{ fontFamily: "var(--font-caveat), cursive" }}
             >
-              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
+              C{"'"}è chi abita il mondo. E chi lo disegna.
             </p>
 
             {/* Firma animata */}

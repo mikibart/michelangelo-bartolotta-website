@@ -98,7 +98,7 @@ export default function ChiSonoPage() {
               className="text-2xl text-[var(--foreground)] mt-8 italic"
               style={{ fontFamily: "var(--font-caveat), cursive" }}
             >
-              {'"'}Dopo Dio c{"'"}è l{"'"}architetto{'"'}
+              C{"'"}è chi abita il mondo. E chi lo disegna.
             </p>
 
             <p
