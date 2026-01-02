@@ -3,7 +3,6 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import IntroAnimation from './IntroAnimation';
-import PencilCursor from './PencilCursor';
 
 interface ClientWrapperProps {
   children: ReactNode;
@@ -33,8 +32,6 @@ export default function ClientWrapper({ children }: ClientWrapperProps) {
 
   return (
     <>
-      <PencilCursor />
-
       <AnimatePresence mode="wait">
         {showIntro && <IntroAnimation onComplete={handleIntroComplete} />}
       </AnimatePresence>
